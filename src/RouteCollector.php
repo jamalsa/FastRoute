@@ -49,9 +49,9 @@ class RouteCollector {
      * All routes created in the passed callback will have the given group prefix prepended.
      *
      * @param string $prefix
-     * @param callable $callback
+     * @param $callback
      */
-    public function addGroup($prefix, callable $callback) {
+    public function addGroup($prefix, $callback) {
         $previousGroupPrefix = $this->currentGroupPrefix;
         $this->currentGroupPrefix = $previousGroupPrefix . $prefix;
         $callback($this);

@@ -4,12 +4,12 @@ namespace FastRoute;
 
 if (!function_exists('FastRoute\simpleDispatcher')) {
     /**
-     * @param callable $routeDefinitionCallback
+     * @param $routeDefinitionCallback
      * @param array $options
      *
      * @return Dispatcher
      */
-    function simpleDispatcher(callable $routeDefinitionCallback, array $options = array()) {
+    function simpleDispatcher($routeDefinitionCallback, array $options = array()) {
         $options += array(
             'routeParser' => 'FastRoute\\RouteParser\\Std',
             'dataGenerator' => 'FastRoute\\DataGenerator\\GroupCountBased',
@@ -27,12 +27,12 @@ if (!function_exists('FastRoute\simpleDispatcher')) {
     }
 
     /**
-     * @param callable $routeDefinitionCallback
+     * @param $routeDefinitionCallback
      * @param array $options
      *
      * @return Dispatcher
      */
-    function cachedDispatcher(callable $routeDefinitionCallback, array $options = array()) {
+    function cachedDispatcher($routeDefinitionCallback, array $options = array()) {
         $options += array(
             'routeParser' => 'FastRoute\\RouteParser\\Std',
             'dataGenerator' => 'FastRoute\\DataGenerator\\GroupCountBased',
