@@ -14,12 +14,12 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
         $r->put('/put', 'put');
 
         $expected = array(
-            ['DELETE', '/delete', 'delete'],
-            ['GET', '/get', 'get'],
-            ['HEAD', '/head', 'head'],
-            ['PATCH', '/patch', 'patch'],
-            ['POST', '/post', 'post'],
-            ['PUT', '/put', 'put'],
+            array('DELETE', '/delete', 'delete'),
+            array('GET', '/get', 'get'),
+            array('HEAD', '/head', 'head'),
+            array('PATCH', '/patch', 'patch'),
+            array('POST', '/post', 'post'),
+            array('PUT', '/put', 'put'),
         );
 
         $this->assertSame($expected, $r->routes);
@@ -61,26 +61,26 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
         });
 
         $expected = array(
-            ['DELETE', '/delete', 'delete'],
-            ['GET', '/get', 'get'],
-            ['HEAD', '/head', 'head'],
-            ['PATCH', '/patch', 'patch'],
-            ['POST', '/post', 'post'],
-            ['PUT', '/put', 'put'],
-            ['DELETE', '/group-one/delete', 'delete'],
-            ['GET', '/group-one/get', 'get'],
-            ['HEAD', '/group-one/head', 'head'],
-            ['PATCH', '/group-one/patch', 'patch'],
-            ['POST', '/group-one/post', 'post'],
-            ['PUT', '/group-one/put', 'put'],
-            ['DELETE', '/group-one/group-two/delete', 'delete'],
-            ['GET', '/group-one/group-two/get', 'get'],
-            ['HEAD', '/group-one/group-two/head', 'head'],
-            ['PATCH', '/group-one/group-two/patch', 'patch'],
-            ['POST', '/group-one/group-two/post', 'post'],
-            ['PUT', '/group-one/group-two/put', 'put'],
-            ['GET', '/admin-some-info', 'admin-some-info'],
-            ['GET', '/admin-more-info', 'admin-more-info'],
+            array('DELETE', '/delete', 'delete'),
+            array('GET', '/get', 'get'),
+            array('HEAD', '/head', 'head'),
+            array('PATCH', '/patch', 'patch'),
+            array('POST', '/post', 'post'),
+            array('PUT', '/put', 'put'),
+            array('DELETE', '/group-one/delete', 'delete'),
+            array('GET', '/group-one/get', 'get'),
+            array('HEAD', '/group-one/head', 'head'),
+            array('PATCH', '/group-one/patch', 'patch'),
+            array('POST', '/group-one/post', 'post'),
+            array('PUT', '/group-one/put', 'put'),
+            array('DELETE', '/group-one/group-two/delete', 'delete'),
+            array('GET', '/group-one/group-two/get', 'get'),
+            array('HEAD', '/group-one/group-two/head', 'head'),
+            array('PATCH', '/group-one/group-two/patch', 'patch'),
+            array('POST', '/group-one/group-two/post', 'post'),
+            array('PUT', '/group-one/group-two/put', 'put'),
+            array('GET', '/admin-some-info', 'admin-some-info'),
+            array('GET', '/admin-more-info', 'admin-more-info'),
         );
 
         $this->assertSame($expected, $r->routes);
