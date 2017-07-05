@@ -18,7 +18,7 @@ class StdTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function provideTestParse() {
-        return [
+        return array(
             [
                 '/test',
                 [
@@ -109,11 +109,11 @@ class StdTest extends \PHPUnit_Framework_TestCase {
                     ['/', ['_foo', '.*']]
                 ]
             ],
-        ];
+        );
     }
 
     public function provideTestParseError() {
-        return [
+        return array(
             [
                 '/test[opt',
                 "Number of opening '[' and closing ']' does not match"
@@ -142,6 +142,6 @@ class StdTest extends \PHPUnit_Framework_TestCase {
                 '/test[/opt]/required',
                 "Optional segments can only occur at the end of a route"
             ],
-        ];
+        );
     }
 }

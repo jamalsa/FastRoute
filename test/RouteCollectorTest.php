@@ -13,14 +13,14 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
         $r->post('/post', 'post');
         $r->put('/put', 'put');
 
-        $expected = [
+        $expected = array(
             ['DELETE', '/delete', 'delete'],
             ['GET', '/get', 'get'],
             ['HEAD', '/head', 'head'],
             ['PATCH', '/patch', 'patch'],
             ['POST', '/post', 'post'],
             ['PUT', '/put', 'put'],
-        ];
+        );
 
         $this->assertSame($expected, $r->routes);
     }
@@ -60,7 +60,7 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
             $r->get('more-info', 'admin-more-info');
         });
 
-        $expected = [
+        $expected = array(
             ['DELETE', '/delete', 'delete'],
             ['GET', '/get', 'get'],
             ['HEAD', '/head', 'head'],
@@ -81,17 +81,17 @@ class RouteCollectorTest extends \PHPUnit_Framework_TestCase {
             ['PUT', '/group-one/group-two/put', 'put'],
             ['GET', '/admin-some-info', 'admin-some-info'],
             ['GET', '/admin-more-info', 'admin-more-info'],
-        ];
+        );
 
         $this->assertSame($expected, $r->routes);
     }
 }
 
 class DummyRouteCollector extends RouteCollector {
-    public $routes = [];
+    public $routes = array();
     public function __construct() {}
     public function addRoute($method, $route, $handler) {
         $route = $this->currentGroupPrefix . $route;
-        $this->routes[] = [$method, $route, $handler];
+        $this->routes[] = array($method, $route, $handler);
     }
 }
