@@ -57,10 +57,10 @@ class StdTest extends \PHPUnit_Framework_TestCase {
             ),
             array(
                 '/test[opt]',
-                [
+                array(
                     array('/test'),
                     array('/testopt'),
-                ]
+                )
             ),
             array(
                 '/test[/{param}]',
